@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+%:
+	dh $@ --with=systemd
+
+override_dh_auto_build:
+	dotnet publish -c Release --self-contained -r ubuntu.18.04-x64
+	# auto-build disabled
+
+override_dh_auto_install:
+	# install application
+	mkdir -p debian/demoapi/opt/ulisesgascon/demoapi
+	install -D -m 755 bin/Release/net7.0/ubuntu.18.04-x64/publish/* debian/demoapi/opt/ulisesgascon/demoapi
+	rm debian/demoapi/opt/ulisesgascon/demoapi/*.pdb #delete pdb
+
+override_dh_shlibdeps:
+	# shilbdeps disabled
+
+override_dh_strip:
+	# strip disabled

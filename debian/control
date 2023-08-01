@@ -1,0 +1,27 @@
+Source: demoapi
+Section: net
+Priority: optional
+Maintainer: Ulises Gascon <ulises@linux.com>
+Build-Depends: debhelper (>= 10), dh-systemd
+Standards-Version: 4.1.2
+Homepage: https://github.com/UlisesGascon/poc-packaging-dot-net-core-service-for-ubuntu
+Vcs-Git: https://github.com/UlisesGascon/poc-packaging-dot-net-core-service-for-ubuntu.git
+Vcs-Browser: https://github.com/UlisesGascon/poc-packaging-dot-net-core-service-for-ubuntu
+
+Package: demoapi
+Architecture: any
+Depends: ${misc:Depends}, liblttng-ust0, libcurl4, libssl1.0.0, libkrb5-3, zlib1g
+Description: efficient demo api server written in C#
+ This package provides the very efficient demo api server
+ written in C# for the .NET 7.0 Platform
+ .
+ This is the main package with the binaries
+
+Package: demoapi-dbg
+Architecture: any
+Depends: ${misc:Depends}, demoapi (= ${binary:Version})
+Description: efficient demo api server written in C#
+ This package provides the very efficient demo api server
+ written in C# for the .NET 7.0 Platform
+ .
+ This package contains the debugging symbols.
