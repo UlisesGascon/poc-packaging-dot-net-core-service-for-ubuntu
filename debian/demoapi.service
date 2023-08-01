@@ -1,0 +1,11 @@
+[Unit]
+Description=Demo Api Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/ulisesgascon/demoapi/demoapi
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

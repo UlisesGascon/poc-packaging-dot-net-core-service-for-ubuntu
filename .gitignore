@@ -346,5 +346,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,windows,macos,linux
 
-debian/demoapi*
+debian/demoapi*/
 debian/.debhelper/
